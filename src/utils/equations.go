@@ -1,6 +1,8 @@
 package equations
 
-import "math"
+import (
+	"math"
+)
 
 // CalculateX get new x
 func CalculateX(d float64, v float64, i int) float64 {
@@ -23,8 +25,8 @@ func RoundingDecimal(num float64, precition int) float64 {
 	return float64(RoundingInt(num*output)) / output
 }
 
-// Distance betweet two points
-func distancia2puntos(X1 float64, X2 float64, Y1 float64, Y2 float64) float64 {
+// distanceBetween2points: calculate the distance betweet two points
+func distanceBetween2points(X1 float64, X2 float64, Y1 float64, Y2 float64) float64 {
 	var result = math.Pow((X2-X1), 2) + math.Pow((Y2-Y1), 2)
 	result = math.Pow(result, 0.5)
 	return RoundingDecimal(result, 8)

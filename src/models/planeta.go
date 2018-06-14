@@ -1,6 +1,8 @@
 package models
 
 import (
+	"math"
+
 	"github.com/tonnygoncalves/extraterrestres/src/utils"
 )
 
@@ -56,4 +58,40 @@ func GetNewCoordenates(planetNumber int, grade int) *Planet {
 	planet.X = equations.CalculateX(float64(planet.Distancy), float64(planet.AngularVelocity), grade)
 	planet.Y = equations.CalculateY(float64(planet.Distancy), float64(planet.AngularVelocity), grade)
 	return planet
+}
+
+// ApointInATriangle detect if some point is or not inside a triangle
+func ApointInATriangle(p Planet, p1 Planet, p2 Planet, p3 Planet) bool {
+	var qty int = 0
+	if p.Y > math.Min(p1.Y, p2.Y) {
+		if p.Y <= math.Max(p1.Y, p2.Y) {
+			if p.X <= math.Max(p1.X, p2.X) {
+				if p1.Y != p2.Y {
+					var xinters = (p.Y-p1.Y)*(p2.X-p1.X)/(p2.Y-p1.Y) + p1.X
+					if p1.X == p2.X || p.X <= xinters {
+						qty++
+					}
+				}
+			}
+		}
+	}
+	p1 = p2
+	p2 = p3
+	if p.Y > math.Min(p1.Y, p2.Y) {
+		if p.Y <= math.Max(p1.Y, p2.Y) {
+			if p.X <= math.Max(p1.X, p2.X) {
+				if p1.Y != p2.Y {
+					var xinters = (p.Y-p1.Y)*(p2.X-p1.X)/(p2.Y-p1.Y) + p1.X
+					if p1.X == p2.X || p.X <= xinters {
+						qty++
+					}
+				}
+			}
+		}
+	}
+	// if this is true point is outside triangle
+	if qty%2 == 0 {
+		return false // outside
+	}
+	return true // inside the triangle
 }
