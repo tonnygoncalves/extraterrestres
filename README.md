@@ -20,13 +20,28 @@ Por lo cual su movimiento de traslación varía con respecto a cada planeta, lo 
 - Vulcano dura 72 días en dar la vuelta completa.
 - Betasoide dura 120 días en dar la vuelta completa.
 
+# Clima a calcular
+
+- Sequía: cuando los tres planetas están alineados entre sí y a su vez alineados con respecto al sol, el sistema solar experimenta un período de sequía.
+- Lluvias: Cuando los tres planetas no están alineados, forman entre sí un triángulo. En el momento en el que el sol se encuentra dentro del triángulo, el sistema solar experimenta un período de lluvia.
+- Lluvia intensas: Se presenta un pico de intensidad cuando el perímetro del triángulo está en su máximo tamaño.
+- Las condiciones óptimas de presión y temperatura se dan cuando los tres planetas están alineados entre sí pero no están alineados con el sol.
+
 # Suposiciones para dar con una posible solución
 - La recolección de los datos se iniciará desde el día cero, mientras todos los planetas arrancan juntos y estarán ubicados en el plano positivo de las X en el plano cartesiano.
 - El año se supone de 360 días, tiempo en que el planeta más cercano al sol(ferengi) hará un giro completo.
 
+# Calculos utilizados para el ejercicio
 
+- Se utilizó la fórmula para calcular movimiento circular uniforme sabiendo el radio y  los grados de desplazamiento, esto nos ayudará a saber cuanto 
+se ha movido el planeta y así conocer su nueva posición y poder calcular según las reglas establecidas. 
+- Para luego poder utilizar diferentes formulas para determinar si los puntos están rectos entre sí 
+- Otra ecuación diferente fue realizada para poder saber si el sol se encuentra dentro del  área que forma el triángulo para poder así establecer las reglas de clima que se piden en el problema.
 
 # Detalles técnicos
+
+## Instalación
+Se puede instalar como una librería
 
 ## Datos de conexión a la base de datos
 
