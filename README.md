@@ -28,6 +28,6 @@ Betasoide dura 120 días en dar la vuelta completa
 
 # Detalles técnicos
 
-# Datos de conexión
+# Datos de conexión a la base de datos
 
 Los datos de conexión estarán ubicados en el archivo ".env" dentro de la carpeta "src"
