@@ -45,4 +45,5 @@ Se puede instalar como una librería
 
 ## Datos de conexión a la base de datos
 
-Los datos de conexión estarán ubicados en el archivo ".env" dentro de la carpeta "src".
+- La base de datos debe estar previamente creada con el nombre "galaxia"
+- Los datos de conexión estarán ubicados en el archivo ".env" dentro de la carpeta "src".
