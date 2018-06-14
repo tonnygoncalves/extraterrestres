@@ -31,7 +31,7 @@ func connnection() (*sql.DB, error) {
 
 	fmt.Printf("%s:%s@/%s", dataUsername, dataPassword, dataName)
 	mysql.RegisterLocalFile("")
-	// Abro la connexion
+	// Open a new connection
 	db, err := sql.Open("mysql", fmt.Sprintf("%s:%s@/%s", dataUsername, dataPassword, dataName))
 	// if there is an error opening the connection, handle it
 	if err != nil {
