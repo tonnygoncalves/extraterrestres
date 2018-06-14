@@ -10,9 +10,9 @@ El problema que se presenta en predecir lo más posible como estará el clima, p
 
 Cada planeta gira en una órbita diferente, y a distancias totalmente distintas entre cada uno. Feregni esta a unos 500 kilómetros cerca de su estrella, mientras que Vulcano el planeta siguiente en la órbita esta a unos 1000 kilómetros y por último tenemos el que sería Urano para el sistema solar y es Betasoide que se encuentra a unos increíbles 2000 kilómetros.
 
-Ferengi: 500 kilómetros de distancia del sol
-Vulcano: 1000 kilómetros de distancia del sol
-Betasoide: 2000 kilómetros de distancia del sol
+Ferengi: 500 kilómetros de distancia del sol y una velocidad angular de 1 grados/día
+Vulcano: 1000 kilómetros de distancia del sol y una velocidad angular de 3 grados/día
+Betasoide: 2000 kilómetros de distancia del sol y una velocidad angular de 5 grados/día en dirección anti-horario
 
 Por lo cual su movimiento de traslación varía con respecto a cada planeta, lo que quiere decir que: 
 
