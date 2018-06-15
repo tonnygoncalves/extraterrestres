@@ -1,7 +1,9 @@
 package models
 
 import (
+	"database/sql"
 	"fmt"
+	"log"
 	"math"
 	"strconv"
 
@@ -203,4 +205,24 @@ func SaveNewDay(dia int, tiempo string, maxlluvia int) bool {
 	defer insert.Close()
 	defer db.Close()
 	return true
+}
+
+// GetDayWheather get a day wheather from database
+func GetDayWheather(day int) string {
+	db, err := db.Connnection()
+	var wheather string
+	error := db.QueryRow("SELECT wheather FROM Wheather WHERE day =?", day).Scan(&wheather)
+	switch {
+	case error == sql.ErrNoRows:
+		wheather = "No hay predicción para este día"
+		log.Printf("No wheather with that ID.")
+	case err != nil:
+		log.Fatal(err)
+	default:
+		if wheather == "" {
+			wheather = "día normal"
+		}
+		fmt.Printf("Wheather is %s\n", wheather)
+	}
+	return wheather
 }
