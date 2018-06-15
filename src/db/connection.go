@@ -18,7 +18,8 @@ var (
 	dataPassword string
 )
 
-func connnection() (*sql.DB, error) {
+// Connnection get a new connection to all models
+func Connnection() (*sql.DB, error) {
 	var err error
 	godotenv.Load()
 	if err != nil {

@@ -59,6 +59,7 @@ func handleGetData(w http.ResponseWriter, r *http.Request) {
 	w.Write(js)
 }
 
+// process get all info by day
 func process() {
-	models.processPlanets()
+	models.ProcessPlanets()
 }

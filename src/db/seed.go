@@ -2,7 +2,7 @@ package db
 
 //Method to create system tables
 func CrearTablas() bool {
-	db, err := connnection()
+	db, err := Connnection()
 
 	// Create a new table for Wheather
 	var wheatherTable = `
