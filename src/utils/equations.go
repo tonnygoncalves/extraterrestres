@@ -26,7 +26,7 @@ func RoundingDecimal(num float64, precition int) float64 {
 }
 
 // distanceBetween2points: calculate the distance betweet two points
-func distanceBetween2points(X1 float64, X2 float64, Y1 float64, Y2 float64) float64 {
+func DistanceBetween2points(X1 float64, X2 float64, Y1 float64, Y2 float64) float64 {
 	var result = math.Pow((X2-X1), 2) + math.Pow((Y2-Y1), 2)
 	result = math.Pow(result, 0.5)
 	return RoundingDecimal(result, 8)

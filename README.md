@@ -47,3 +47,6 @@ Se puede instalar como una librería
 
 - La base de datos debe estar previamente creada con el nombre "galaxia"
 - Los datos de conexión estarán ubicados en el archivo ".env" dentro de la carpeta "src".
+
+# ¿Cómo utlizar el API?
+

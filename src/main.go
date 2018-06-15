@@ -6,18 +6,13 @@ import (
 	"log"
 	"net/http"
 	"strconv"
-)
 
-var (
-	vTime          int //10 years
-	maxperimetro   float64
-	diamaximo      int
-	contadorSequia int64 // contador para saber cuantos días de sequía hay en el periodo a evaluar
-	contadorLluvia int64 // contador para saber cuantos días de lluvia hay en el periodo a evaluar
+	"github.com/tonnygoncalves/extraterrestres/src/models"
 )
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		process()
 		fmt.Fprintf(w, "Ha ingresado al el API del sistema solar DELTA si no conoce nuestra civilización por favor no continue.")
 	})
 
@@ -65,5 +60,5 @@ func handleGetData(w http.ResponseWriter, r *http.Request) {
 }
 
 func process() {
-	vTime = 3600 //10 years
+	models.processPlanets()
 }
