@@ -34,7 +34,7 @@ func handleGetData(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if _, err := strconv.Atoi(keys[0]); err != nil {
-		log.Println("%q - It looks like not a number.\n", keys[0])
+		//log.Println("%q - It looks like not a number.\n", keys[0])
 		w.Header().Set("Content-Type", "text/html")
 		w.Write([]byte("No ha ingresado un numero.\n"))
 		return
@@ -48,15 +48,14 @@ func handleGetData(w http.ResponseWriter, r *http.Request) {
 		dia:   key,
 		clima: "Reds",
 	}
-
-	js, err := json.Marshal(group)
+	err := json.NewEncoder(w).Encode(group)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(js)
+	//w.Header().Set("Content-Type", "application/json")
+	//w.Write(js)
 }
 
 // process get all info by day

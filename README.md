@@ -53,3 +53,5 @@ Se puede instalar como una librería
 El api debe ser llamada a través del puerto 9990/clima?dia=11 el cual retornará un JSON
 
 GET → http://….../clima?dia=566   → Respuesta: {“dia”:566, “clima”:”lluvia”}
+
+- El parámetro día debe ser númerico 

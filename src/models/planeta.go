@@ -3,6 +3,7 @@ package models
 import (
 	"fmt"
 	"math"
+	"strconv"
 
 	"github.com/tonnygoncalves/extraterrestres/src/db"
 	"github.com/tonnygoncalves/extraterrestres/src/utils"
@@ -160,7 +161,7 @@ func ProcessPlanets() {
 		}
 		//fmt.Printf("Lluvia: %s Sequía: %s Day: %f contador: %f contador lluvia: %f PX1=%f PY1=%f PX2=%f PY2=%f PX3=%f PY3=%f \n", 0, 0, i, contadorSequia, contadorLluvia, px1, py1, px2, py2, px3, py3)
 
-		//nuevoDia(i, tiempo, diamaximo)
+		SaveNewDay(i, tiempo, diamaximo)
 	}
 
 	/*fmt.Printf("Lluvia: %s Sequía: %s Maxp %f Dia: %f \n", contadorLluvia, contadorSequia, maxperimetro, diamaximo)*/
@@ -176,6 +177,25 @@ func CleanAllMax() bool {
 		`
 	insert, err := db.Query(wheatherTable)
 
+	if err != nil {
+		panic(err.Error())
+	}
+
+	defer insert.Close()
+	defer db.Close()
+	return true
+}
+
+// SaveNewDay send a row to a database
+func SaveNewDay(dia int, tiempo string, maxlluvia int) bool {
+	db, err := db.Connnection()
+	var wheatherTable = `
+	INSERT INTO Wheather (day, wheather, maxRain) value (%s, '%s', %s);
+		`
+	wheatherTable = fmt.Sprintf(wheatherTable, strconv.Itoa(dia), tiempo, strconv.Itoa(maxlluvia))
+	insert, err := db.Query(wheatherTable)
+
+	// Si hay un error lo manejo
 	if err != nil {
 		panic(err.Error())
 	}
