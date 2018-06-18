@@ -45,6 +45,7 @@ Se puede instalar como una librería
 
 ## Datos de conexión a la base de datos
 
+- El manejador de base de datos utilizado fue Mysql
 - La base de datos debe estar previamente creada con el nombre "galaxia"
 - Los datos de conexión estarán ubicados en el archivo ".env" dentro de la carpeta "src".
 
