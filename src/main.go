@@ -10,14 +10,9 @@ import (
 )
 
 func main() {
-	/*http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		process()
-		fmt.Fprintf(w, "Ha ingresado al el API del sistema solar DELTA si no conoce nuestra civilización por favor no continue.")
-	})*/
-
 	http.HandleFunc("/clima", handleGetData)
-
-	http.ListenAndServe(":3000", nil)
+	//Abriendo el puerto donde se escucha.
+	http.ListenAndServe(":80", nil)
 }
 
 //handleGetData get clima router info
