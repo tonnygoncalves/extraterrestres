@@ -214,7 +214,7 @@ func GetDayWheather(day int) string {
 	error := db.QueryRow("SELECT wheather FROM Wheather WHERE day =?", day).Scan(&wheather)
 	switch {
 	case error == sql.ErrNoRows:
-		wheather = "No hay predicción para este día"
+		wheather = "No hay prediccion"
 		log.Printf("No wheather with that ID.")
 	case err != nil:
 		log.Fatal(err)
